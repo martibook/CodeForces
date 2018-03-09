@@ -12,9 +12,7 @@ for k in range(K+1):
 for i in range(n):
     s = timetable[i]
     lesson = [0]
-    for t in range(m):
-        if s[t] == '1':
-            lesson.append(t+1)
+    lesson += [t+1 for t in range(m) if s[t] == '1']
 
     lesson_count.append(len(lesson) - 1)  # except the first element
     for k in range(lesson_count[i]+1):
