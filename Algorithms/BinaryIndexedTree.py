@@ -1,3 +1,6 @@
+"""binary indexed tree class"""
+
+
 class BIT:
 
     def __init__(self, l):
