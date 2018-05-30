@@ -1,3 +1,7 @@
+# the common vertex must be the same
+# because there is guaranteed no ring in the tree
+
+
 def main():
     n = int(input())
     neis = [[] for _ in range(n + 1)]
