@@ -1,0 +1,26 @@
+# .github/workflows/pr-check.yml
+
+name: PR Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Use the version of Python you need
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # Install any dependencies required by your script
+
+      - name: Run PR check script
+        run: python check_pr.py
